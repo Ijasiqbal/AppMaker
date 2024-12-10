@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
         elevation: 150,
         width: 152,
         marginHorizontal: 8,
-        marginVertical: 16,
+        marginVertical: 20,
+        marginBottom: 30,
     },
     image: {
         width: '100%',

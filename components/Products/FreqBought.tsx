@@ -1,8 +1,11 @@
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import ProcuctCard from './ProcuctCard'
+import { useNavigation } from 'expo-router'
 
 const FreqBought = () => {
+
+    const navigation = useNavigation();
 
     const products = [
         {
@@ -12,7 +15,7 @@ const FreqBought = () => {
             originalPrice: '$512.58',
             discount: '45%',
             rating: '4.9 (256)',
-            image: require('../assets/images/freq1.png')
+            image: require('../../assets/images/freq1.png')
         },
         {
             id: 2,
@@ -21,7 +24,7 @@ const FreqBought = () => {
             originalPrice: '$856.60',
             discount: '45%',
             rating: '4.8 (128)',
-            image: require('../assets/images/freq2.png')
+            image: require('../../assets/images/freq2.png')
         },
         {
             id: 3,
@@ -30,7 +33,7 @@ const FreqBought = () => {
             originalPrice: '$512.58',
             discount: '45%',
             rating: '4.9 (256)',
-            image: require('../assets/images/freq3.png')
+            image: require('../../assets/images/freq3.png')
         },
         {
             id: 4,
@@ -39,14 +42,14 @@ const FreqBought = () => {
             originalPrice: '$512.58',
             discount: '45%',
             rating: '4.9 (256)',
-            image: require('../assets/images/freq4.png')
+            image: require('../../assets/images/freq4.png')
         }
     ]
   return (
     <View style={styles.base}>
         <View  style={styles.header}>
             <Text style={styles.headerText}>Frequently bought</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>navigation.navigate('SeeMore' as never)}>
                 <Text style={styles.seeMore}>See More</Text>
             </TouchableOpacity>
         </View>
@@ -55,7 +58,7 @@ const FreqBought = () => {
             showsHorizontalScrollIndicator={false}
         >
             { products.map((product, index) => (
-                <ProcuctCard product={product} />
+                <ProcuctCard product={product} key={product.id} />
             ))}
         </ScrollView>
       
@@ -67,6 +70,7 @@ export default FreqBought
 
 const styles = StyleSheet.create({
     base: {
+        
     },
     header : {
         paddingHorizontal: 16,  

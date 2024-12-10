@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native'
-import UpArrow from '../assets/images/upArrow.png';
+import UpArrow from '../../assets/images/upArrow.png';
 import { TouchableOpacity } from 'react-native';
 
 interface DescriptionProps {

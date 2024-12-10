@@ -1,12 +1,12 @@
 import {  ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useState } from 'react';
-import AddToCartTab from '@/components/AddToCartTab';
-import ImageCarousal from '../components/ImageCarousal';
+import AddToCartTab from '@/components/Products/AddToCartTab';
+import ImageCarousal from '../components/Products/ImageCarousal';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import the icon library
-import ColorOptions from '../components/ColorOptions'; // Import the ColorOptions component
-import Description from '@/components/Description';
-import Size from '@/components/Size';
-import FreqBought from '@/components/FreqBought';
+import ColorOptions from '../components/Products/ColorOptions'; // Import the ColorOptions component
+import Description from '@/components/Products/Description';
+import Size from '@/components/Products/Size';
+import FreqBought from '@/components/Products/FreqBought';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const images = [
@@ -131,7 +131,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.page}>
         <ImageCarousal images={images} />
         <View style={styles.productInfo}>
@@ -155,25 +155,38 @@ const ProductDetail = () => {
           selectedColor={selectedProduct?.color || ''}
           onColorChange={handleColorChange}
         />
-        <View style={styles.line}></View>
+        <View style={[styles.line,{marginTop: 0}]}></View>
         <Description description={selectedProduct?.detailedDescription ?? ''} />
         
         <View style={styles.line}></View>
         {selectedProduct?.size && <Size size={selectedProduct.size} />}
         <View style={styles.line}></View>
-        <FreqBought />
+        <View style={styles.freqContainer}>
+          <FreqBought />
+          
+
+        </View>
+        
   
         
       </ScrollView>
       <AddToCartTab />
+
+      
+      
+
 
     </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  safeArea: {
+    
+  },
   page: {
     backgroundColor: '#fff',
+    
   },
   productInfo: {
     paddingHorizontal: 16,
@@ -234,6 +247,9 @@ const styles = StyleSheet.create({
     lineHeight: 19.2,
     fontWeight: '400',
     marginTop: 6,
+  },
+  freqContainer: {
+    paddingBottom: 118,
   },
 });
 

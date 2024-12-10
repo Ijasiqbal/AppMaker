@@ -33,22 +33,22 @@ const ColorOptions: React.FC<ColorOptionsProps> = ({ colors, selectedColor, onCo
 
 const styles = StyleSheet.create({
   ColorsContainer: {
-    marginTop: 6,
+    marginTop: 2,
     paddingHorizontal: 16,
   },
   colors: {
     flexDirection: 'row',
     gap: '4%',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
   },
   colorOption: {
     borderWidth: 1,
     borderColor: '#E0E0E0',
-    padding: 10,
+    padding: 8,
     borderRadius: 8,
     width: '48%',
     flexDirection: 'row',
+    marginVertical: 4,
   },
   selectedColorOption: {
     borderColor: 'black',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   ColorH1: {
     fontSize: 18,
     fontWeight: '700',
-    marginBottom: 12,
+    marginBottom: 8,
   },
   colorsText: {
     fontSize: 14,

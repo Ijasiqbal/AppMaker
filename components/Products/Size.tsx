@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
-import upArrow from '../assets/images/upArrow.png';
+import upArrow from '../../assets/images/upArrow.png';
 
 interface SizeProps {
     size: {
@@ -27,14 +27,14 @@ const Size:React.FC<SizeProps> = ({size}) => {
             Object.entries(size).map(([key, value], index) => (
                 <View key={index} style={[styles.content, !isOpen && {display: 'none'}]}>
                     <View style={styles.row}>
-                        <Text style={styles.contentText}>{key}</Text>
+                        <Text style={styles.contentText}>{key} :</Text>
                         <Text style={styles.contentText}>{value}</Text>
                     </View>
                     <View style={[styles.line,index==Object.entries(size).length-1 && {display: 'none'}]}></View>
                 </View>
             ))
         }
-        <Image source={require('../assets/images/size.png')} style={styles.image} />
+        <Image source={require('../../assets/images/size.png')} style={styles.image} />
         
       </View>
     </View>
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     contentBox: {
         marginTop: 12,
     },
+    content:{},
 
     contentText: {
         fontSize: 14,

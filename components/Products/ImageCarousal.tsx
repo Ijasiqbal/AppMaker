@@ -13,12 +13,10 @@ const ImageCarousal: React.FC<ImageCarousalProps> = ({ images }) => {
 
   const handleThumbnailClick = (index: number) => {
     setSelectedImageIndex(index);
-    // Scroll to the selected image in the main carousel
     scrollViewRef.current?.scrollTo({ x: index * Dimensions.get('window').width, animated: true });
   };
 
   const handleScroll = (event: any) => {
-    // Update the index when user scrolls through the carousel
     const offsetX = event.nativeEvent.contentOffset.x;
     const currentIndex = Math.round(offsetX / Dimensions.get('window').width);
     setSelectedImageIndex(currentIndex);
@@ -34,7 +32,6 @@ const ImageCarousal: React.FC<ImageCarousalProps> = ({ images }) => {
         showsHorizontalScrollIndicator={false}
         ref={scrollViewRef}
         onScroll={handleScroll}
-        scrollEventThrottle={16}
         style={styles.mainCarousel}
       >
         {images.map((image, index) => (
@@ -58,7 +55,6 @@ const ImageCarousal: React.FC<ImageCarousalProps> = ({ images }) => {
             />
           </TouchableOpacity>
         )}
-        keyExtractor={(_, index) => index.toString()}
       />
     </SafeAreaView>
   );
@@ -70,7 +66,7 @@ const styles = StyleSheet.create({
   base: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 50,
+    marginVertical:20,
     position: 'relative',
   },
   mainCarousel: {
@@ -92,7 +88,9 @@ const styles = StyleSheet.create({
     height: 50,
     borderRadius: 10,
     marginHorizontal: 5,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    
+    
   },
   selectedThumbnail: {
     borderColor: '#156651',
