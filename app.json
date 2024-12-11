@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "AppMaker",
-    "slug": "AppMaker",
+    "slug": "appmaker",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -43,8 +43,9 @@
         "origin": false
       },
       "eas": {
-        "projectId": "d4363a2b-b21c-4528-b8ea-6c1a419347bd"
+        "projectId": "5f783988-fcea-4ea1-8a5f-5b422a92cca6"
       }
-    }
+    },
+    "owner": "ijasiqbal-org"
   }
 }
